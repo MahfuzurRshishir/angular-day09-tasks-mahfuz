@@ -1,0 +1,47 @@
+<div class="head">
+  <h1>Products</h1>
+
+  <div class="search">
+    <label for="q">Search</label>
+    <input id="q" type="text" [(ngModel)]="query" (ngModelChange)="applyFilter()" />
+  </div>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input id="price" type="number" formControlName="price" />
+  </div>
+  <div>
+    <button type="submit">{{ editingId != null ? 'Save' : 'Add Product' }}</button>
+  </div>
+</form>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of filtered">
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.price | price }}</td>
+        <td>
+          <button class="details-btn" type="button" (click)="details(p)">Details</button>
+          <button class="edit-btn" type="button" (click)="edit(p)">Edit</button>
+          <button class="delete-btn" type="button" (click)="remove(p)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

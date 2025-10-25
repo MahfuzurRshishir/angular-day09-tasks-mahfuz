@@ -1,0 +1,20 @@
+<h1>Register</h1>
+<p>Create a new account.</p>
+<form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" />
+    <small *ngIf="form.controls['name'].touched && form.controls['name'].invalid">Name is required (min 2).</small>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" />
+    <small *ngIf="form.controls['email'].touched && form.controls['email'].invalid">Valid email is required.</small>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" />
+    <small *ngIf="form.controls['password'].touched && form.controls['password'].invalid">Password min length 6.</small>
+  </div>
+  <button type="submit">Register</button>
+</form>

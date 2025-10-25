@@ -1,0 +1,238 @@
+/* Products page enhancements */
+
+.host,
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.head {
+  background-color: antiquewhite;
+  align-self: stretch;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+
+.search {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+
+  input[type='text'] {
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    min-width: 240px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+form {
+  display: grid;
+  align-self: stretch;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 24px;
+  background-color: cadetblue;
+
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
+  row-gap: 12px;
+  column-gap: 24px;
+  margin-bottom: 16px;
+  width: auto;
+  justify-items: stretch;
+  align-items: end;
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+
+
+  //blue color for add-product button in products page
+  $primary-hover-blue: darken(rgb(22, 30, 142), 15%);
+
+  button[type='submit'] {
+    padding: 8px 14px;
+    background: rgb(22, 30, 142);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+
+    &:hover {
+      background-color: $primary-hover-blue;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+form>div:last-child {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e0e0e0;
+  max-width: 900px;
+}
+
+thead th {
+  text-align: center;
+  background: #d6d3d3;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+  background: #fafafa;
+}
+
+td:last-child {
+  white-space: nowrap;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button+button {
+  margin-left: 8px;
+}
+
+.table-container {
+  background-color: lightcyan;
+  align-self: stretch;
+  margin-left: -24px;
+  margin-right: -24px;
+  padding: 16px 24px;
+}
+
+.table-container table {
+  background: #fff;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+//green color for edit button in products list
+$primary-hover-green: darken(rgb(6, 113, 36), 10%);
+
+.edit-btn {
+  background-color: rgb(6, 113, 36);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+
+  &:hover {
+    background-color: $primary-hover-green;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+//red color for delete button in products list
+$primary-hover-red: darken(rgb(139, 8, 8), 10%);
+
+.delete-btn {
+  background-color: rgb(139, 8, 8);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+
+  &:hover {
+    background-color: $primary-hover-red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+}
+
+//yellow color for details button in products list
+$primary-hover-yellow: darken(rgb(142, 125, 28), 10%);
+
+.details-btn {
+  background-color: rgb(142, 125, 28);
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+
+
+  &:hover {
+    background-color: $primary-hover-yellow;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}

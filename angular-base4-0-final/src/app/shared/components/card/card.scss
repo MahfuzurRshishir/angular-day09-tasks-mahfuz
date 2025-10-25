@@ -1,0 +1,21 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+}
+
+h3 {
+  margin: 0 0 8px 0;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
